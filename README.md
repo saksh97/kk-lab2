@@ -44,6 +44,10 @@ spec:
       containers:
       - name: httpd
         image: httpd:latest
+
+Progressing day 2
+
+
 ```
 
 ![Deployment File Explained](2.%20deployment_file_explained.png)
@@ -94,3 +98,13 @@ kubectl get pods
 * **`unknown field "maytchLabels"`**: Caused by a typo in `matchLabels` under `spec.selector`.
 
 ![Task Completed](4.%20task-completed.png)
+
+
+From system architecture to terminal troubleshooting—today’s DevOps & Kubernetes learning wrap-up! 💻⚙️
+Here is what clicked for me today:
+1️⃣ HLD vs. LLD: DevOps owns infrastructure HLD, while SREs bridge HLD reliability with selective code-level LLD dives when performance bottlenecks hit.
+2️⃣ YAML Precision: A single typo (metdata vs. metadata) in a Kubernetes manifest can prevent a namespace from being named, cascading into NotFound errors for every resource inside it.
+3️⃣ Under the Hood of K8s: A jump-host is just your kubectl remote control. The actual images live on worker nodes managed by runtimes like containerd, not a local Docker daemon.
+4️⃣ Live Inspection: kubectl describe tells you the story of how a pod was scheduled and pulled, while kubectl exec -it <pod> -n <namespace> -- /bin/bash lets you step right inside.
+Small labs, big clarity. On to the next challenge! 🚀
+#Kubernetes #DevOps #SiteReliabilityEngineering #Linux #CloudNative #LearningInPublic
